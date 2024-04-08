@@ -1,0 +1,2068 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>	
+
+    <meta name="viewport" content="user-scalable=no">
+	<meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="path/to/autocomplete.css">
+
+  <!-- Include JavaScript for the autocomplete library -->
+  <script src="path/to/autocomplete.js"></script>
+
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+
+<defs>
+<style>
+
+ body {
+    background-color: white;
+  }
+
+	
+	
+  /* Dark Mode Styles */
+  body.dark-mode,
+  body.dark-mode * {
+    color: #f2f2f2;
+  }
+
+  body.dark-mode {
+    background-color: #0F0F0E;
+  }
+
+  /* Override specific element styles for dark mode */
+  body.dark-mode table {
+    /* Override table background color */
+    background-color: #333333;
+  }
+
+  body.dark-mode th
+  body.dark-mode td {
+    /* Override table cell text color */
+    color: #f2f2f2;
+  }
+
+ body.dark-mode .metrics-table th {
+  color: #bcbcbc;
+  padding: 9px;
+}
+
+svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+
+
+  body.dark-mode svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+
+
+  body.dark-mode svg text.label {
+    /* Override SVG text color */
+    fill: #bcbcbc;
+  }
+
+body.dark-mode button {
+  /* Override button background color */
+  background-color: #333333;
+}
+
+body.dark-mode button,
+body.dark-mode button:focus {
+  /* Override button text color */
+  color: #f2f2f2;
+}
+
+body.dark-mode button:hover {
+  /* Preserve button hover property */
+  color: initial;
+}
+
+body.dark-mode .button-8 {
+  /* Override button background color */
+  background-color: #13293d; /* Dark blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+body.dark-mode .button-8:hover,
+body.dark-mode .button-8:focus {
+  /* Override button hover and focus state */
+  background-color: #3a6ea5; /* Darker blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+body.dark-mode .button-8:hover,
+body.dark-mode .button-8:focus {
+  /* Override button hover and focus state */
+  background-color: #3a6ea5; /* Darker blue color */
+  color: #f2f2f2; /* Off-white color */
+}
+
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 11.4px;
+    left: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    background-color: #e0e0de;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+.dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f467"; /* Unicode value for the moon icon in Ionicons */
+  font-size: 35px; /* Adjust the value as needed */
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333333;
+}
+
+
+
+body.dark-mode .dark-mode-toggle .toggle-icon::before {
+  font-family: "Ionicons";
+  content: "\f3b0"; /* Unicode value for the sun icon in Ionicons */
+  font-size: 24px; /* Adjust the value as needed */
+}
+
+
+
+body.dark-mode .toggle-slider {
+  background-color: #2B2C2E; /* Darker background color for dark mode */
+}
+
+body.dark-mode input:checked + .toggle-slider:before {
+  background-color: #ccc; /* Darker background color for dark mode */
+}
+
+
+body.dark-mode .button-10 {
+  border: 0.1px solid #000000; /* Darker background color for dark mode */
+}
+
+
+	
+ .button-10 {
+    position: absolute;
+    top: 724px;
+    left: 637px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40.1px;
+    height: 40.1px;
+    border-radius: 50%;
+  background-color: #e0e0de;
+  color: #333;
+  border: 0.1px solid #ccc;
+  cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+.icon2::before {
+  content: "\f118";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+.icon3::before {
+  content: "\f448";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}
+
+
+body.dark-mode #searchInput1 {
+    color: #000; /* Specify the desired text color for dark mode */
+background-color : #999;
+  }
+	
+ body.dark-mode	  #searchInput1::placeholder {
+    color: #fff; /* Specify the desired color for the placeholder text */
+  }
+
+ body.dark-mode	  #searchButton1 {
+    color: #fff !important; /* Specify the desired color for the placeholder text */
+background-color : #333333;
+  }
+
+.button-1 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 45px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-1:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-2 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 145px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-2:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-3 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 245px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-3:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-4 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 345px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-4:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+
+.button-5 {
+  align-items: center;
+height: 20px;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 445px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-5:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+.button-6 {
+  align-items: center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 838px;
+  left: 545px;
+height: 20px;
+width: 85px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-6:hover {
+   box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+.button-9 {
+  align-items: center;
+  background-color: #e0e0de;
+  border-radius: 25px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.82rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0.1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .1s,-webkit-box-shadow .1s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  position: absolute;
+  top: 10px;
+  left: 878px;
+  width: 50px; 
+ 
+  touch-action: manipulation;
+}
+
+.button-9:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
+}
+
+
+
+
+text {
+  font-family: Arial;
+}
+
+.result-color-blue {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-pink {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-orange {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-green {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+
+
+
+.result-color-bleu {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-rose {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-1 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-2 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-3 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-4 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-5 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-6 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-7 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-8 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-9 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-10 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-11 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-12 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-13 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-14 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-15 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-16 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-17 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-18 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-19 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-20 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-21 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-22 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-23 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-24 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-25 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-26 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-27 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-28 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-29 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-30 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-31 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-32 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-33 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-34 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-35 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-36 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+.result-color-37 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-38 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-39 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-40 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-41 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-42 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+.result-color-43 {
+  color: #3062FB !important;
+  stroke: #3062FB;
+  fill: #3062FB;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-44 {
+  color: #F62681 !important;
+stroke: #F62681;
+fill: #F62681;
+fill-opacity: 0.02;
+
+}
+
+.result-color-45 {
+  color: #55d149 !important;
+stroke: #55d149;
+fill: #55d149;
+fill-opacity: 0.02;
+}
+
+.result-color-46 {
+  color: #FFCF5F !important;
+stroke: #FFCF5F;
+fill: #FFCF5F;
+fill-opacity: 0.02;
+}
+
+
+.result-color-47 {
+  color: #900C3F  !important;
+  stroke: #900C3F ;
+  fill: #900C3F ;
+  fill-opacity: 0.02;
+}
+
+
+.result-color-48 {
+  color: #F09710 !important;
+stroke: #F09710;
+fill: #F09710;
+fill-opacity: 0.02;
+
+}
+
+
+           
+svg:nth-of-type(1) {
+  position: absolute;
+  top: 239px;
+  left: 113px;
+  width: 520px;
+  height: 520px;
+}
+
+svg:nth-of-type(2) {
+  position: absolute;
+  top: 256px;
+  left: 133px;
+
+}
+
+
+table {
+   border-collapse: collapse;
+  width: 140px;
+  font-family: Arial;
+  border-radius: 10px;
+ ;
+ 
+}
+
+
+
+
+
+
+#searchInput1 {
+  width: 406px;
+height: 30px;
+}
+
+#searchInput1::placeholder {
+    font-size : 18px; /* Specify the desired color for the placeholder text */
+  }
+
+
+#searchButton1 {
+  width: 32px;
+color: black !important;
+height: 32px;
+cursor: pointer;
+}
+
+
+	.name {
+  font-family: Arial, sans-serif !important;
+font-size: 13px;
+position: relative;
+top: 10px;
+  color: black !important;
+cursor: pointer;
+}
+
+.dark-mode .matching-names-container {
+  background-color: grey;
+}
+
+
+     img {
+            width: 40px;
+position: absolute;
+top: 663px;
+pointer-events: none;
+z-index: 40000; 
+left: 38px;
+opacity: .8;
+        }
+
+td {
+    font-weight: bold;
+  }
+  th {
+    font-weight: normal;
+  }
+
+
+
+
+
+ .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+position: absolute;
+  top: 676px;
+  left: 590px;
+ width: 120px; 
+    }
+
+    .toggle-label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .toggle-checkbox {
+      width: 40px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .toggle-checkbox input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+    }
+
+    .toggle-slider:before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+	
+.icon::before {
+  content: "\f21c";
+  font-family: "Ionicons"; /* Replace with the appropriate font */
+font-size: 22px;
+}		
+
+
+.metrics-table {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.metrics-table th {
+  color: #000000;
+  padding: 6px 9px;
+font-size: 11px;
+  text-align: center;
+}
+
+.metrics-table td {
+  padding: 4px 11px;
+text-align: center;
+}
+
+
+tr:first-child th:first-child {
+  color: #5b5b5b;
+font-weight: bold;
+font-size: 12px;
+ 
+}
+
+.header {
+  font-family: system-ui;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo {
+    position: relative; /* Add this to make the logo a positioning context */
+}
+
+.header .logo img {
+    /* Styles for the logo image inside the header */
+    width: 40px;
+    height: 40px;
+    opacity: 0.84;
+    position: absolute;
+    top: -10px; /* Adjust top and left values as needed to position the logo image */
+    left: -7px;
+}
+
+
+.header .logo-text {
+  margin-left: 40px;
+  font-size: 20px;
+color: #444444;
+  font-weight: 600;
+}
+
+.header .navigation {
+  display: center;
+  align-items: center;
+      word-spacing: 1.3em; /* Adjust the spacing as needed */	
+
+}
+
+.header .button {
+  margin: 0 10px;
+  padding: 0px 20px;
+  color: #444444;
+  text-decoration: none;
+  border-radius: 0px;
+font-size: 18px;
+}
+
+header a {
+      color: #444444;
+      text-decoration: none;
+
+    }
+
+.header .header-svg {
+    /* Styles for the new SVG inside the header */
+    position: absolute;
+    top: 27px; /* Adjust top and left values as needed to position the new SVG */
+    left: 95%;
+    width: 30px;
+    height: 28px;
+color: #444444;
+}
+
+
+body.dark-mode .header .twitter-link svg {
+  fill: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+
+body.dark-mode header a {
+  color: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+body.dark-mode .header .button  {
+  color: #bcbcbc; /* Change the Twitter icon color to green in dark mode */
+}
+
+
+</style>
+</defs>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+</head>
+
+
+<div id="parent-container">
+  <body>
+    <input type="text" id="searchInput1" class="search-bar" placeholder="Enter name of player..." />
+    <input type="button" id="searchButton1" value="+&nbsp;" />
+    <br />
+    <div id="resultsTable"></div>
+  <div id="similarPlayersTable"></div>
+  <div id="matchingNames"></div>
+   <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <div class="toggle-icon"></div>
+    </div>
+  
+  
+  
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+   <g class="radar_label">
+    <text class="label" data-type="Short%" data-idx="0" transform="translate(163.99 36.45) rotate(-1)">BOX+/-</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Long%" data-idx="6" transform="matrix(0.5, -0.86, 0.86, 0.5, 51.89, 118) rotate(3.87)">DWS</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Passes" data-idx="5" transform="matrix(-0.38, -0.93, 0.93, -0.38, 50.88, 242.78)">TS%</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Exits" data-idx="4" transform="translate(110.19 332.04) rotate(24.87)">RPG</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Aerial" data-idx="3" transform="translate(258.36 340.52) rotate(-26.32)">APG</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Def Actions" data-idx="2" transform="translate(351 195.46) rotate(100.11)">PPG</text>
+  </g>
+  
+  <g class="radar_label">
+    <text class="label" data-type="Shotstopping" data-idx="1" transform="translate(298.42 71.6) rotate(51.99)">VORP</text>
+  </g>
+      
+    </svg>					
+  
+  
+  <svg width="500" height="500" class="radar"><g transform="translate(231.77,225.77)"><g class="axisWrapper">
+  
+  
+  <circle class="blackCircle" r="190" style="fill:none; stroke:#D3D3D3; stroke-width:1;"></circle>
+  <circle class="gridCircle" r="190" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="160" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="120" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="80" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle>
+  <circle class="gridCircle" r="40" style="fill: rgb(16, 135, 188); fill-opacity: 0.03;"></circle></g>
+  
+  
+    
+   
+  <line x1="0" y1="0" x2="9.33" y2="189.4543362" stroke="#D3D3D3" stroke-width="1" transform="translate(-9.33, -189.4543362)"></line>
+  <line x1="0" y1="0" x2="-142.0538533333333" y2="126.24" stroke="#D3D3D3" stroke-width="1" transform="translate(141.74184, -126.24)"></line>
+  <line x1="0" y1="0" x2="-187.31589333333332" y2="-32.31413333333333" stroke="#D3D3D3" stroke-width="1" transform="translate(187.5574112, 32.2528)"></line>
+  <line x1="0" y1="0" x2="-91.84497333333333" y2="-166.92245333333333" stroke="#D3D3D3" stroke-width="1" transform="translate(91.84497333333333, 166.21328)"></line>
+  <line x1="0" y1="0" x2="72.99733333333333" y2="-175.84917333333335" stroke="#D3D3D3" stroke-width="1" transform="translate(-72.99997333333334, 175.334068)"></line>
+  <line x1="0" y1="0" x2="182.73258666666666" y2="-52.67472" stroke="#D3D3D3" stroke-width="1" transform="translate(-182.7209384, 52.480128)"></line>
+  <line x1="0" y1="0" x2="154.67849333333334" y2="109.91788799999999" stroke="#D3D3D3" stroke-width="1" transform="translate(-154.6883792222, -110.017215488)"></line>
+  
+  
+  <g class="radarWrapper"></g>
+  <g class="radarWrapper2"></g>
+  </g>
+  
+  
+  
+     <img src="https://datamb.football/logo.png" alt="Logo">
+  
+  <script>
+    const names = [
+"DeMar DeRozan,34,CHI", "Mikal Bridges,27,BRK", "Domantas Sabonis,27,SAC", "Coby White,23,CHI", "Dejounte Murray,27,ATL", "Anthony Davis,30,LAL", "Paolo Banchero,21,ORL", "Anthony Edwards,22,MIN", "Kevin Durant,35,PHO", "Jayson Tatum,25,BOS", "Nikola Jokić,28,DEN", "Pascal Siakam,29,TOT", "Giannis Antetokounmpo,29,MIL", "Fred VanVleet,29,HOU", "Austin Reaves,25,LAL", "Luka Dončić,24,DAL", "Jalen Brunson,27,NYK", "Josh Hart,28,NYK", "Shai Gilgeous-Alexander,25,OKC", "Tyrese Maxey,23,PHI", "Nikola Vučević,33,CHI", "Miles Bridges,25,CHO", "Damian Lillard,33,MIL", "De'Aaron Fox,26,SAC", "Dennis Schröder,30,TOT", "Jalen Green,21,HOU", "Michael Porter Jr.,25,DEN", "Rudy Gobert,31,MIN", "James Harden,34,LAC", "Paul George,33,LAC", "LeBron James,39,LAL", "Kawhi Leonard,32,LAC", "Keegan Murray,23,SAC", "Grayson Allen,28,PHO", "D'Angelo Russell,27,LAL", "Derrick White,29,BOS", "Jarrett Allen,25,CLE", "Kyle Kuzma,28,WAS", "Tobias Harris,31,PHI", "Chet Holmgren,21,OKC", "Stephen Curry,35,GSW", "Jaylen Brown,27,BOS", "Devin Vassell,23,SAS", "Brook Lopez,35,MIL", "Jordan Poole,24,WAS", "Brandon Miller,21,CHO", "Kentavious Caldwell-Pope,30,DEN", "Franz Wagner,22,ORL", "Devin Booker,27,PHO", "Bogdan Bogdanović,31,ATL", "Harrison Barnes,31,SAC", "Bam Adebayo,26,MIA", "Jeremy Sochan,20,SAS", "Malik Beasley,27,MIL", "Jabari Smith Jr.,20,HOU", "Aaron Gordon,28,DEN", "Jrue Holiday,33,BOS", "Ayo Dosunmu,24,CHI", "Jaren Jackson Jr.,24,MEM", "Jalen Williams,22,OKC", "Herbert Jones,25,NOP", "Luguentz Dort,24,OKC", "Klay Thompson,33,GSW", "Scottie Barnes,22,TOR", "Max Strus,27,CLE", "Donte DiVincenzo,27,NYK", "Brandon Ingram,26,NOP", "Cade Cunningham,22,DET", "Deni Avdija,23,WAS", "Tyrese Haliburton,23,IND", "Saddiq Bey,24,ATL", "Alperen Sengun,21,HOU", "Buddy Hield,31,TOT", "Spencer Dinwiddie,30,TOT", "Jaden Ivey,21,DET", "Zion Williamson,23,NOP", "Dillon Brooks,28,HOU", "Collin Sexton,25,UTA", "P.J. Washington,25,TOT", "Mike Conley,36,MIN", "Keldon Johnson,24,SAS", "Taurean Prince,29,LAL", "Nic Claxton,24,BRK", "Grant Williams,25,TOT", "Tim Hardaway Jr.,31,DAL", "Karl-Anthony Towns,28,MIN", "Victor Wembanyama,20,SAS", "Terry Rozier,29,TOT", "Jaime Jaquez Jr.,22,MIA", "Myles Turner,27,IND", "Jusuf Nurkić,29,PHO", "Tyus Jones,27,WAS", "Jaden McDaniels,23,MIN", "CJ McCollum,32,NOP", "Tre Jones,24,SAS", "Dorian Finney-Smith,30,BRK", "John Collins,26,UTA", "Cam Thomas,22,BRK", "Alex Caruso,29,CHI", "Corey Kispert,24,WAS", "Malik Monk,25,SAC", "Josh Giddey,21,OKC", "Trae Young,25,ATL", "Kelly Oubre Jr.,28,PHI", "Keyonte George,20,UTA", "Jalen Suggs,22,ORL", "Norman Powell,30,LAC", "Duncan Robinson,29,MIA", "Immanuel Quickley,24,TOT", "Aaron Nesmith,24,IND", "Bobby Portis,28,MIL", "Jonathan Kuminga,21,GSW", "Caris LeVert,29,CLE", "Donovan Mitchell,27,CLE", "Gary Trent Jr.,25,TOR", "Kyrie Irving,31,DAL", "Jerami Grant,29,POR", "Lauri Markkanen,26,UTA", "Jonas Valančiūnas,31,NOP", "Royce O'Neale,30,TOT", "Naz Reid,24,MIN", "Jimmy Butler,34,MIA", "Jalen Johnson,22,ATL", "Eric Gordon,35,PHO", "Brandin Podziemski,20,GSW", "Nickeil Alexander-Walker,25,MIN", "Andrew Wiggins,28,GSW", "Isaac Okoro,23,CLE", "Bruce Brown,27,TOT", "Darius Garland,24,CLE", "Clint Capela,29,ATL", "Toumani Camara,23,POR", "Jamal Murray,26,DEN", "Terance Mann,27,LAC", "Georges Niang,30,CLE", "Isaiah Hartenstein,25,NYK", "Bilal Coulibaly,19,WAS", "Cole Anthony,23,ORL", "Nick Richards,26,CHO", "RJ Barrett,23,TOT", "Jalen Duren,20,DET", "Reggie Jackson,33,DEN", "Jordan Clarkson,31,UTA", "Al Horford,37,BOS", "Daniel Gafford,25,TOT", "Kyle Anderson,30,MIN", "Rui Hachimura,25,LAL", "Ivica Zubac,26,LAC", "Payton Pritchard,26,BOS", "Simone Fontecchio,28,TOT", "Obi Toppin,25,IND", "Derrick Jones Jr.,26,DAL", "Julius Randle,29,NYK", "Santi Aldama,23,MEM", "Deandre Ayton,25,POR", "Kristaps Porziņģis,28,BOS", "Kelly Olynyk,32,TOT", "Kyle Lowry,37,TOT", "Scoot Henderson,19,POR", "Anfernee Simons,24,POR", "Ausar Thompson,21,DET", "Cameron Johnson,27,BRK", "Cason Wallace,20,OKC", "Sam Hauser,26,BOS", "Kevin Huerter,25,SAC", "Andrew Nembhard,24,IND", "Bradley Beal,30,PHO", "Precious Achiuwa,24,TOT", "Jabari Walker,21,POR", "Pat Connaughton,31,MIL", "Bennedict Mathurin,21,IND", "Caleb Martin,28,MIA", "De'Andre Hunter,26,ATL", "Christian Braun,22,DEN", "OG Anunoby,26,TOT", "Walker Kessler,22,UTA", "Matisse Thybulle,26,POR", "Malaki Branham,20,SAS", "Paul Reed,24,PHI", "Trey Murphy III,23,NOP", "Ochai Agbaji,23,TOT", "Desmond Bane,25,MEM", "Josh Green,23,DAL", "Vince Williams Jr.,23,MEM", "Isaiah Stewart,22,DET", "Russell Westbrook,35,LAC", "Zach Collins,26,SAS", "Onyeka Okongwu,23,ATL", "Evan Mobley,22,CLE", "Bojan Bogdanović,34,TOT", "Patrick Beverley,35,TOT", "Khris Middleton,32,MIL", "Nicolas Batum,35,TOT", "Peyton Watson,21,DEN", "Chris Paul,38,GSW", "Draymond Green,33,GSW", "Isaiah Joe,24,OKC", "Jakob Poeltl,28,TOR", "Moritz Wagner,26,ORL", "Andre Drummond,30,CHI", "Dereck Lively II,19,DAL", "Wendell Carter Jr.,24,ORL", "Julian Champagnie,22,SAS", "Cedi Osman,28,SAS", "Naji Marshall,26,NOP", "Amir Coffey,26,LAC", "Kris Dunn,29,UTA", "Tyler Herro,24,MIA", "Amen Thompson,21,HOU", "Cameron Payne,29,TOT", "Dyson Daniels,20,NOP", "T.J. McConnell,31,IND", "Joel Embiid,29,PHI", "Jeff Green,37,HOU", "Alec Burks,32,TOT", "Haywood Highsmith,27,MIA", "Patrick Williams,22,CHI", "Aaron Holiday,27,HOU", "David Roddy,22,TOT", "Miles McBride,23,NYK", "John Konchar,27,MEM", "Marcus Sasser,23,DET", "Gordon Hayward,33,TOT", "Gary Harris,29,ORL", "Jordan Hawkins,21,NOP", "Anthony Black,20,ORL", "Kris Murray,23,POR", "Gradey Dick,20,TOR", "Malcolm Brogdon,31,POR", "Duop Reath,27,POR", "Kevon Looney,27,GSW", "Larry Nance Jr.,31,NOP", "Dean Wade,27,CLE", "Josh Richardson,30,MIA", "Aaron Wiggins,25,OKC", "Drew Eubanks,26,PHO", "Dario Šarić,29,GSW", "Joe Ingles,36,ORL", "Shaedon Sharpe,20,POR", "Dennis Smith Jr.,26,BRK", "Marvin Bagley III,24,TOT", "Sam Merrill,27,CLE", "Jae Crowder,33,MIL", "Ziaire Williams,22,MEM", "Vasilije Micić,30,TOT", "Jae'Sean Tate,28,HOU", "GG Jackson II,19,MEM", "Quentin Grimes,23,TOT", "Moses Moody,21,GSW", "Trey Lyles,28,SAC"  ];
+    const searchInput = document.getElementById("searchInput1");
+   const matchingNamesContainer = document.getElementById("matchingNames");
+  const searchButton = document.getElementById("searchButton");
+  
+  
+  function isMobileDevice() {
+    const userAgent = navigator.userAgent;
+    return /Android|iPhone/i.test(userAgent);
+  }
+  
+  function updateMatchingNames() {
+    const searchQuery = removeSpecialChars(searchInput.value.toLowerCase());
+    const matchingNames = names.filter(function(name) {
+      const [fullName] = name.split(",");
+      const normalizedName = removeSpecialChars(fullName.toLowerCase());
+      return normalizedName.includes(searchQuery);
+    });
+  
+    matchingNamesContainer.innerHTML = "";
+  
+    matchingNames.forEach(function(name) {
+      const [fullName, team, age] = name.split(",");
+  
+      const nameElement = document.createElement("div");
+      nameElement.classList.add("name");
+  
+      const fullNameElement = document.createElement("span");
+      fullNameElement.textContent = fullName;
+      fullNameElement.classList.add("fullName");
+      nameElement.appendChild(fullNameElement);
+  
+      const ageElement = document.createElement("span");
+      ageElement.textContent = " (" + team + ",";
+      ageElement.classList.add("age");
+      nameElement.appendChild(ageElement);
+  
+      const teamElement = document.createElement("span");
+      teamElement.textContent = " " + age + ")";
+      teamElement.classList.add("team");
+      nameElement.appendChild(teamElement);
+  
+      nameElement.addEventListener("click", function() {
+        searchInput.value = fullName; // Set the clicked name as the search input value
+        searchButton1.click(); // Trigger the search button click event
+      });
+  
+      matchingNamesContainer.appendChild(nameElement);
+    });
+  
+    if (searchQuery === "" && matchingNames.length === 0) {
+      matchingNamesContainer.style.display = "none";
+    } else {
+      matchingNamesContainer.style.display = "block";
+  
+      matchingNamesContainer.style.backgroundColor = "#9c9b9b";
+      matchingNamesContainer.style.width = "384px";
+      matchingNamesContainer.style.padding = "10px";
+      matchingNamesContainer.style.position = "absolute";
+      matchingNamesContainer.style.left = "12px";
+      matchingNamesContainer.style.zIndex = "9999"; // Set a high z-index value
+  
+  
+      // Set different styles for mobile and non-mobile
+      if (isMobileDevice()) {
+        matchingNamesContainer.style.top = "5.6%";
+      } else {
+        matchingNamesContainer.style.top = "4.76%";
+      }
+  
+    }
+  
+  
+    if (searchQuery === "") {
+      matchingNamesContainer.style.display = "none";
+    }
+  }
+  
+  searchInput.addEventListener("input", updateMatchingNames);
+  searchInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      searchButton1.click(); // Trigger the search button click event
+    } else if (event.key === "Backspace") {
+      updateMatchingNames();
+    }
+  });
+  
+  </script>
+  
+  <div class="toggle-container">
+    <label class="toggle-label"></label>
+    <label class="toggle-checkbox">
+      <input type="checkbox" id="toggleButton" onclick="toggleFilling()" unchecked>
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+  
+  
+  <button onclick="takeScreenshot()" class="button-10"><div class="icon2"></div></button>
+  
+  
+    <script>
+
+    function takeScreenshot() {
+  
+  
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+     
+       let x, y, cropPercentageX, cropPercentageY, cropPercentageRight, captureWidth, captureHeight;
+     
+       if (isMobile) {
+         // Values for mobile devices
+         x = 0;
+         y = 0;
+         cropPercentageX = -0.0147;
+         cropPercentageY = 0.06;
+         cropPercentageRight = 0.23;
+         captureWidth = 930;
+         captureHeight = 723;
+       } else {
+         // Values for desktop
+         x = 0;
+         y = 0;
+         cropPercentageX = -0.0087;
+         cropPercentageY = 0.05;
+         cropPercentageRight = 0.385;
+         captureWidth = 1200;
+         captureHeight = 723;
+       }
+     
+     
+     
+     domtoimage.toBlob(document.getElementById('parent-container'), {
+       width: captureWidth,
+       height: captureHeight,
+       style: {
+         transform: 'none' // Remove any applied transformations
+       }
+     }).then(blob => {
+         // Create an image element to load the screenshot blob
+         const img = new Image();
+         img.onload = () => {
+           // Calculate the crop dimensions based on the percentages and image size
+           const cropX = img.width * cropPercentageX;
+           const cropY = img.height * cropPercentageY;
+           const cropWidth = img.width - cropX - (img.width * cropPercentageRight);
+           const cropHeight = img.height - cropY;
+     
+           // Create a new canvas element with the cropped dimensions
+           const canvas = document.createElement('canvas');
+           canvas.width = cropWidth;
+           canvas.height = cropHeight;
+     
+           // Get the 2D drawing context of the canvas
+           const ctx = canvas.getContext('2d');
+     
+     const storedDarkMode = localStorage.getItem("darkMode");
+     
+     // Check if dark mode is enabled based on stored preference or system preference
+     const darkModeEnabled = storedDarkMode === "true" || window.matchMedia('(prefers-color-scheme: dark)').matches;
+     
+     // Fill the canvas with the appropriate color
+     if (darkModeEnabled) {
+       ctx.fillStyle = '#000000'; // Black color
+     } else {
+       ctx.fillStyle = '#ffffff'; // White color
+     }
+     ctx.fillRect(0, 0, canvas.width, canvas.height);
+     
+     
+           ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+     
+     ctx.font = '12px Arial'; // Adjust the font size for the other text
+     ctx.fillStyle = 'grey'; // Adjust the color for the other text
+     ctx.fillText('datamb.football', 629, 676);
+     
+     
+           // Convert the canvas to a PNG image
+           canvas.toBlob(croppedBlob => {
+             // Create a temporary link element
+             const link = document.createElement('a');
+             link.href = URL.createObjectURL(croppedBlob);
+             link.download = 'screenshot.png'; // Specify the filename for the downloaded image
+     
+             // Simulate a click on the link to trigger the download
+             link.click();
+           }, 'image/png');
+         };
+         img.src = URL.createObjectURL(blob);
+       });
+     }
+     const csvData = `1,DeMar DeRozan,CHI,34,0.911,0.827,0.497,0.51,0.714,0.73,0.843,2784
+     2,Mikal Bridges,BRK,27,0.815,0.658,0.578,0.309,0.646,0.465,0.626,2727
+     3,Domantas Sabonis,SAC,27,0.787,0.979,1,0.903,0.947,0.975,0.983,2686
+     4,Coby White,CHI,23,0.775,0.827,0.578,0.393,0.465,0.417,0.566,2681
+     5,Dejounte Murray,ATL,27,0.883,0.931,0.662,0.289,0.413,0.751,0.843,2602
+     6,Anthony Davis,LAL,30,0.931,0.63,0.991,0.204,0.971,0.714,0.803,2578
+     7,Paolo Banchero,ORL,21,0.875,0.851,0.803,0.791,0.987,0.939,0.963,2577
+     8,Anthony Edwards,MIN,22,0.947,0.815,0.694,0.417,0.987,0.883,0.927,2568
+     9,Kevin Durant,PHO,35,0.975,0.827,0.795,0.879,0.855,0.923,0.955,2561
+     10,Jayson Tatum,BOS,25,0.971,0.771,0.887,0.726,0.979,0.955,0.967,2543
+     11,Nikola Jokić,DEN,28,0.955,0.987,0.987,0.911,0.995,1,1,2524
+     12,Pascal Siakam,TOT,29,0.859,0.742,0.827,0.626,0.361,0.787,0.859,2511
+     13,Giannis Antetokounmpo,MIL,29,0.991,0.935,0.979,0.919,0.947,0.987,0.991,2500
+     14,Fred VanVleet,HOU,29,0.714,0.971,0.369,0.333,0.895,0.867,0.919,2492
+     15,Austin Reaves,LAL,25,0.67,0.875,0.526,0.751,0.61,0.578,0.71,2472
+     16,Luka Dončić,DAL,24,0.995,0.991,0.927,0.775,0.923,0.991,0.995,2471
+     17,Jalen Brunson,NYK,27,0.983,0.939,0.333,0.554,0.718,0.959,0.967,2457
+     18,Josh Hart,NYK,28,0.261,0.698,0.871,0.016,0.935,0.465,0.59,2456
+     19,Shai Gilgeous-Alexander,OKC,25,0.987,0.923,0.694,0.895,0.963,0.983,0.987,2444
+     20,Tyrese Maxey,PHI,23,0.943,0.915,0.369,0.365,0.542,0.835,0.875,2436
+     21,Nikola Vučević,CHI,33,0.755,0.61,0.955,0.116,0.835,0.485,0.626,2428
+     22,Miles Bridges,CHO,25,0.855,0.61,0.855,0.261,0.465,0.373,0.453,2419
+     23,Damian Lillard,MIL,33,0.927,0.959,0.526,0.574,0.542,0.811,0.859,2402
+     24,De'Aaron Fox,SAC,26,0.951,0.879,0.554,0.317,0.835,0.787,0.843,2391
+     25,Dennis Schröder,TOT,30,0.594,0.907,0.168,0.172,0.855,0.502,0.626,2384
+     26,Jalen Green,HOU,21,0.807,0.63,0.634,0.232,0.116,0.232,0.212,2384
+     27,Michael Porter Jr.,DEN,25,0.722,0.212,0.827,0.73,0.835,0.566,0.69,2382
+     28,Rudy Gobert,MIN,31,0.582,0.132,0.995,0.967,1,0.742,0.803,2381
+     29,James Harden,LAC,34,0.71,0.983,0.634,0.775,0.718,0.915,0.939,2363
+     30,Paul George,LAC,33,0.883,0.63,0.662,0.835,0.799,0.971,0.979,2354
+     31,LeBron James,LAL,39,0.935,0.975,0.847,0.746,0.799,0.851,0.875,2353
+     32,Kawhi Leonard,LAC,32,0.915,0.642,0.746,0.425,0.718,0.313,0.381,2333
+     33,Keegan Murray,SAC,23,0.626,0.297,0.662,0.831,0.835,0.959,0.959,2330
+     34,Grayson Allen,PHO,28,0.55,0.57,0.393,0.987,0.61,0.69,0.775,2318
+     35,D'Angelo Russell,LAL,27,0.763,0.923,0.212,0.574,0.493,0.662,0.775,2305
+     36,Derrick White,BOS,29,0.65,0.827,0.497,0.767,0.923,0.915,0.927,2290
+     37,Jarrett Allen,CLE,25,0.698,0.506,0.947,0.18,0.244,0.313,0.381,2281
+     38,Kyle Kuzma,WAS,28,0.871,0.714,0.787,0.947,0.947,0.859,0.875,2279
+     39,Tobias Harris,PHI,31,0.742,0.57,0.759,0.425,0.775,0.614,0.69,2272
+     40,Chet Holmgren,OKC,21,0.706,0.469,0.867,0.863,0.963,0.867,0.891,2268
+     41,Stephen Curry,GSW,35,0.955,0.791,0.497,0.751,0.542,0.931,0.947,2254
+     42,Jaylen Brown,BOS,27,0.903,0.642,0.694,0.73,0.823,0.662,0.742,2252
+     43,Devin Vassell,SAS,23,0.779,0.706,0.393,0.518,0.907,0.662,0.742,2249
+     44,Brook Lopez,MIL,35,0.502,0.257,0.662,0.461,0.413,0.485,0.59,2248
+     45,Jordan Poole,WAS,24,0.73,0.714,0.128,0.072,0.092,0.04,0.008,2237
+     46,Brandon Miller,CHO,21,0.73,0.445,0.497,0.594,0.718,0.281,0.293,2227
+     47,Kentavious Caldwell-Pope,DEN,30,0.325,0.445,0.096,0.16,0.2,0.088,0.064,2226
+     48,Franz Wagner,ORL,22,0.787,0.674,0.662,0.417,0.907,0.69,0.742,2221
+     49,Devin Booker,PHO,27,0.979,0.955,0.578,0.759,0.542,0.867,0.891,2218
+     50,Bogdan Bogdanović,ATL,31,0.722,0.586,0.305,0.353,0.2,0.566,0.658,2211
+     51,Harrison Barnes,SAC,31,0.502,0.092,0.168,0.775,0.293,0.244,0.212,2195
+     52,Bam Adebayo,MIA,26,0.795,0.698,0.955,0.437,0.975,0.831,0.843,2194
+     53,Jeremy Sochan,SAS,20,0.453,0.61,0.759,0.028,0.542,0.056,0.032,2193
+     54,Malik Beasley,MIL,27,0.445,0.176,0.393,0.738,0.465,0.265,0.269,2190
+     55,Jabari Smith Jr.,HOU,20,0.574,0.212,0.887,0.393,0.907,0.429,0.534,2188
+     56,Aaron Gordon,DEN,28,0.594,0.61,0.779,0.71,0.718,0.662,0.71,2178
+     57,Jrue Holiday,BOS,33,0.518,0.771,0.694,0.642,0.883,0.795,0.815,2151
+     58,Ayo Dosunmu,CHI,24,0.465,0.57,0.156,0.69,0.413,0.341,0.381,2137
+     59,Jaren Jackson Jr.,MEM,24,0.879,0.421,0.694,0.24,0.855,0.55,0.626,2124
+     60,Jalen Williams,OKC,22,0.779,0.755,0.441,0.815,0.718,0.795,0.815,2124
+     61,Herbert Jones,NOP,25,0.413,0.481,0.305,0.899,0.855,0.69,0.71,2112
+     62,Luguentz Dort,OKC,24,0.377,0.176,0.369,0.574,0.698,0.248,0.248,2110
+     63,Klay Thompson,GSW,33,0.746,0.417,0.273,0.345,0.465,0.341,0.381,2103
+     64,Scottie Barnes,TOR,22,0.803,0.907,0.871,0.345,0.61,0.891,0.891,2094
+     65,Max Strus,CLE,27,0.489,0.674,0.578,0.261,0.763,0.409,0.453,2082
+     66,Donte DiVincenzo,NYK,27,0.638,0.481,0.333,0.449,0.775,0.702,0.742,2079
+     67,Brandon Ingram,NOP,26,0.831,0.891,0.634,0.594,0.835,0.903,0.891,2076
+     68,Cade Cunningham,DET,22,0.895,0.967,0.497,0.176,0.2,0.55,0.626,2074
+     69,Deni Avdija,WAS,23,0.61,0.674,0.827,0.614,0.361,0.381,0.409,2073
+     70,Tyrese Haliburton,IND,23,0.819,1,0.413,0.702,0.293,0.979,0.975,2063
+     71,Saddiq Bey,ATL,24,0.582,0.212,0.779,0.204,0.064,0.248,0.248,2062
+     72,Alperen Sengun,HOU,21,0.847,0.791,0.935,0.53,0.923,0.939,0.927,2046
+     73,Buddy Hield,TOT,31,0.485,0.534,0.236,0.518,0.361,0.578,0.658,2042
+     74,Spencer Dinwiddie,TOT,30,0.369,0.771,0.128,0.096,0.152,0.064,0.044,2038
+     75,Jaden Ivey,DET,21,0.638,0.658,0.305,0.096,0.244,0.232,0.212,2036
+     76,Zion Williamson,NOP,23,0.899,0.791,0.73,0.188,0.698,0.044,0.032,2033
+     77,Dillon Brooks,HOU,28,0.514,0.297,0.293,0.775,0.799,0.911,0.911,2032
+     78,Collin Sexton,UTA,25,0.767,0.771,0.112,0.759,0.012,0.775,0.795,2030
+     79,P.J. Washington,TOT,25,0.522,0.341,0.694,0.827,0.883,0.891,0.875,2026
+     80,Mike Conley,MIN,36,0.429,0.895,0.156,0.088,0.493,0.112,0.076,2023
+     81,Keldon Johnson,SAS,24,0.666,0.534,0.694,0.353,0.361,0.265,0.269,2015
+     82,Taurean Prince,LAL,29,0.261,0.257,0.2,0.449,0.465,0.104,0.076,1999
+     83,Nic Claxton,BRK,24,0.465,0.357,0.943,0.875,0.883,0.71,0.742,1996
+     84,Grant Williams,TOT,25,0.333,0.381,0.481,0.477,0.293,0.104,0.076,1994
+     85,Tim Hardaway Jr.,DAL,31,0.622,0.321,0.273,0.188,0.293,0.12,0.104,1976
+     86,Karl-Anthony Towns,MIN,28,0.863,0.558,0.899,0.851,0.947,0.851,0.831,1969
+     87,Victor Wembanyama,SAS,20,0.851,0.658,0.947,0.317,0.979,0.939,0.919,1962
+     88,Terry Rozier,TOT,29,0.811,0.879,0.481,0.277,0.465,0.73,0.775,1961
+     89,Jaime Jaquez Jr.,MIA,22,0.477,0.481,0.413,0.373,0.775,0.156,0.14,1956
+     90,Myles Turner,IND,27,0.714,0.132,0.811,0.791,0.646,0.578,0.626,1950
+     91,Jusuf Nurkić,PHO,29,0.425,0.674,0.967,0.297,0.935,0.614,0.658,1939
+     92,Tyus Jones,WAS,27,0.465,0.963,0.128,0.69,0.293,0.449,0.493,1934
+     93,Jaden McDaniels,MIN,23,0.377,0.176,0.236,0.461,0.064,0.614,0.658,1933
+     94,CJ McCollum,NOP,32,0.771,0.755,0.497,0.518,0.718,0.835,0.815,1932
+     95,Tre Jones,SAS,24,0.313,0.915,0.333,0.381,0.855,0.14,0.12,1931
+     96,Dorian Finney-Smith,BRK,30,0.228,0.257,0.57,0.204,0.413,0.248,0.248,1910
+     97,John Collins,UTA,26,0.626,0.064,0.903,0.807,0.361,0.341,0.381,1901
+     98,Cam Thomas,BRK,22,0.863,0.534,0.236,0.24,0.2,0.281,0.293,1899
+     99,Alex Caruso,CHI,29,0.345,0.598,0.413,0.742,0.775,0.819,0.795,1897
+     100,Corey Kispert,WAS,24,0.534,0.297,0.128,0.791,0.012,0.212,0.212,1878
+     101,Malik Monk,SAC,25,0.65,0.815,0.168,0.325,0.413,0.578,0.59,1872
+     102,Josh Giddey,OKC,21,0.489,0.755,0.755,0.22,0.775,0.726,0.742,1870
+     103,Trae Young,ATL,25,0.955,0.995,0.128,0.502,0.028,0.835,0.803,1862
+     104,Kelly Oubre Jr.,PHI,28,0.638,0.176,0.61,0.08,0,0.028,0.012,1858
+     105,Keyonte George,UTA,20,0.522,0.742,0.168,0.096,0.646,0.14,0.12,1857
+     106,Jalen Suggs,ORL,22,0.502,0.506,0.212,0.642,0.895,0.646,0.658,1857
+     107,Norman Powell,LAC,30,0.602,0.064,0.1,0.891,0.2,0.393,0.409,1853
+     108,Duncan Robinson,MIA,29,0.538,0.534,0.112,0.771,0.646,0.393,0.409,1853
+     109,Immanuel Quickley,TOT,24,0.702,0.755,0.333,0.835,0.244,0.417,0.453,1851
+     110,Aaron Nesmith,IND,24,0.477,0.212,0.393,0.373,0.2,0.646,0.658,1849
+     111,Bobby Portis,MIL,28,0.55,0.092,0.847,0.405,0.718,0.281,0.293,1846
+     112,Jonathan Kuminga,GSW,21,0.694,0.381,0.598,0.626,0.542,0.429,0.453,1843
+     113,Caris LeVert,CLE,29,0.582,0.827,0.461,0.04,0.763,0.502,0.534,1839
+     114,Donovan Mitchell,CLE,27,0.967,0.895,0.634,0.22,0.064,0.112,0.104,1835
+     115,Gary Trent Jr.,TOR,25,0.55,0.257,0.1,0.698,0.493,0.931,0.915,1833
+     116,Kyrie Irving,DAL,31,0.935,0.827,0.61,0.626,0.799,0.967,0.939,1833
+     117,Jerami Grant,POR,29,0.839,0.518,0.305,0.405,0.152,0.465,0.493,1830
+     118,Lauri Markkanen,UTA,26,0.903,0.357,0.871,0.863,0.152,0.891,0.859,1820
+     119,Jonas Valančiūnas,NOP,31,0.489,0.381,0.919,0.807,0.895,0.714,0.71,1816
+     120,Royce O'Neale,TOT,30,0.164,0.518,0.598,0.261,0.61,0.522,0.534,1810
+     121,Naz Reid,MIN,24,0.55,0.132,0.634,0.682,0.943,0.751,0.742,1809
+     122,Jimmy Butler,MIA,34,0.839,0.771,0.69,0.819,0.763,0.927,0.891,1801
+     123,Jalen Johnson,ATL,22,0.69,0.642,0.907,0.558,0.493,0.714,0.69,1795
+     124,Eric Gordon,PHO,35,0.437,0.381,0.024,0.088,0.61,0.465,0.493,1790
+     125,Brandin Podziemski,GSW,20,0.277,0.658,0.73,0.53,0.293,0.248,0.248,1787
+     126,Nickeil Alexander-Walker,MIN,25,0.16,0.469,0.04,0.152,0.413,0.12,0.104,1785
+     127,Andrew Wiggins,GSW,28,0.53,0.297,0.554,0.437,0.799,0.522,0.566,1783
+     128,Isaac Okoro,CLE,23,0.297,0.341,0.2,0.594,0.61,0.341,0.333,1781
+     129,Bruce Brown,TOT,27,0.389,0.534,0.526,0.281,0.152,0.056,0.052,1776
+     130,Darius Garland,CLE,24,0.755,0.939,0.112,0.289,0.493,0.293,0.293,1766
+     131,Clint Capela,ATL,29,0.437,0.092,0.955,0.546,0.542,0.522,0.534,1741
+     132,Toumani Camara,POR,23,0.144,0.092,0.61,0.18,0.413,0.076,0.064,1739
+     133,Jamal Murray,DEN,26,0.831,0.947,0.461,0.461,0.542,0.887,0.831,1733
+     134,Terance Mann,LAC,27,0.212,0.257,0.273,0.485,0.542,0.088,0.076,1727
+     135,Georges Niang,CLE,30,0.297,0.092,0.305,0.59,0.152,0.212,0.14,1724
+     136,Isaiah Hartenstein,NYK,25,0.144,0.421,0.887,0.963,0.907,0.863,0.815,1717
+     137,Bilal Coulibaly,WAS,19,0.212,0.297,0.461,0.16,0.116,0.032,0.024,1715
+     138,Cole Anthony,ORL,23,0.461,0.558,0.441,0.188,0.823,0.566,0.566,1708
+     139,Nick Richards,CHO,26,0.313,0.004,0.871,0.461,0.244,0.393,0.381,1702
+     140,RJ Barrett,TOT,23,0.795,0.598,0.662,0.991,0.361,0.156,0.14,1702
+     141,Jalen Duren,DET,20,0.574,0.445,0.983,0.931,0.542,0.502,0.534,1695
+     142,Reggie Jackson,DEN,33,0.357,0.674,0.024,0.06,0.293,0.08,0.076,1684
+     143,Jordan Clarkson,UTA,31,0.73,0.791,0.293,0.923,0.823,0.903,0.831,1683
+     144,Al Horford,BOS,37,0.24,0.481,0.759,0.044,0,0.016,0.012,1682
+     145,Daniel Gafford,TOT,25,0.405,0.212,0.863,0.995,0.718,0.811,0.775,1682
+     146,Kyle Anderson,MIN,30,0.088,0.73,0.333,0.072,0.855,0.742,0.71,1672
+     147,Rui Hachimura,LAL,25,0.538,0.092,0.461,0.971,0.646,0.578,0.59,1670
+     148,Ivica Zubac,LAC,26,0.445,0.176,0.923,0.863,0.293,0.313,0.333,1668
+     149,Payton Pritchard,BOS,26,0.228,0.57,0.236,0.502,0.542,0.578,0.59,1647
+     150,Simone Fontecchio,TOT,28,0.369,0.212,0.369,0.666,0.028,0.341,0.333,1644
+     151,Obi Toppin,IND,25,0.345,0.212,0.413,0.975,0.152,0.662,0.626,1640
+     152,Derrick Jones Jr.,DAL,26,0.228,0.032,0.273,0.365,0.646,0.767,0.71,1630
+     153,Julius Randle,NYK,29,0.923,0.791,0.927,0.614,0.361,0.265,0.269,1629
+     154,Santi Aldama,MEM,23,0.377,0.421,0.73,0.14,0.646,0.449,0.453,1618
+     155,Deandre Ayton,POR,25,0.686,0.257,0.971,0.594,0.61,0.502,0.493,1616
+     156,Kristaps Porziņģis,BOS,28,0.819,0.357,0.823,0.915,0.855,0.951,0.871,1613
+     157,Kelly Olynyk,TOT,32,0.297,0.742,0.634,0.931,0.293,0.767,0.71,1610
+     158,Kyle Lowry,TOT,37,0.204,0.714,0.236,0.57,0.542,0.341,0.333,1588
+     159,Scoot Henderson,POR,19,0.57,0.791,0.212,0.004,0.092,0,0,1585
+     160,Anfernee Simons,POR,24,0.883,0.863,0.333,0.048,0.493,0.212,0.212,1583
+     161,Ausar Thompson,DET,21,0.248,0.341,0.759,0.361,0.028,0.522,0.493,1582
+     162,Cameron Johnson,BRK,27,0.55,0.445,0.526,0.485,0.244,0.614,0.566,1572
+     163,Cason Wallace,OKC,20,0.112,0.176,0.076,0.791,0.493,0.465,0.453,1570
+     164,Sam Hauser,BOS,26,0.248,0.024,0.293,0.939,0.646,0.751,0.69,1562
+     165,Kevin Huerter,SAC,25,0.357,0.481,0.305,0.325,0.361,0.373,0.333,1562
+     166,Andrew Nembhard,IND,24,0.293,0.706,0.052,0.381,0.028,0.156,0.14,1559
+     167,Bradley Beal,PHO,30,0.751,0.815,0.481,0.542,0.293,0.341,0.333,1557
+     168,Precious Achiuwa,TOT,24,0.176,0.176,0.811,0.232,0.698,0.313,0.333,1549
+     169,Jabari Walker,POR,21,0.24,0.032,0.795,0.22,0.413,0.064,0.064,1548
+     170,Pat Connaughton,MIL,31,0.048,0.381,0.236,0.128,0.646,0.232,0.212,1541
+     171,Bennedict Mathurin,IND,21,0.614,0.357,0.441,0.313,0.064,0.044,0.052,1538
+     172,Caleb Martin,MIA,28,0.345,0.381,0.554,0.558,0.244,0.305,0.293,1537
+     173,De'Andre Hunter,ATL,26,0.658,0.212,0.413,0.71,0.028,0.196,0.14,1517
+     174,Christian Braun,DEN,22,0.124,0.212,0.333,0.666,0.293,0.449,0.409,1498
+     175,OG Anunoby,TOT,26,0.618,0.421,0.497,0.188,0.493,0.156,0.14,1494
+     176,Walker Kessler,UTA,22,0.176,0.024,0.855,0.947,0.542,0.658,0.59,1493
+     177,Matisse Thybulle,POR,26,0.028,0.176,0.052,0.12,0.61,0.578,0.534,1487
+     178,Malaki Branham,SAS,20,0.273,0.381,0.024,0.052,0.024,0.008,0.004,1468
+     179,Paul Reed,PHI,24,0.136,0.132,0.742,0.477,0.718,0.485,0.453,1463
+     180,Trey Murphy III,NOP,23,0.602,0.381,0.598,0.658,0.61,0.795,0.71,1460
+     181,Ochai Agbaji,TOT,23,0.056,0.032,0.128,0.012,0.028,0.032,0.032,1457
+     182,Desmond Bane,MEM,25,0.915,0.863,0.526,0.558,0.293,0.835,0.742,1443
+     183,Josh Green,DAL,23,0.224,0.421,0.236,0.702,0.2,0.156,0.14,1436
+     184,Vince Williams Jr.,MEM,23,0.333,0.61,0.722,0.626,0.542,0.381,0.333,1436
+     185,Isaiah Stewart,DET,22,0.393,0.257,0.787,0.666,0.092,0.156,0.14,1423
+     186,Russell Westbrook,LAC,35,0.413,0.734,0.61,0.028,0.493,0.538,0.493,1410
+     187,Zach Collins,SAS,26,0.405,0.518,0.658,0.979,0.152,0.429,0.409,1405
+     188,Onyeka Okongwu,ATL,23,0.357,0.132,0.803,0.297,0.244,0.128,0.12,1402
+     189,Evan Mobley,CLE,22,0.682,0.586,0.939,0.883,0.775,0.867,0.775,1386
+     190,Bojan Bogdanović,TOT,34,0.67,0.321,0.168,0.485,0.064,0.064,0.076,1359
+     191,Patrick Beverley,TOT,35,0.06,0.518,0.212,0.064,0.293,0.265,0.248,1356
+     192,Khris Middleton,MIL,32,0.626,0.851,0.57,0.574,0.293,0.662,0.566,1353
+     193,Nicolas Batum,TOT,35,0.036,0.381,0.461,0.819,0.361,0.449,0.409,1351
+     194,Peyton Watson,DEN,21,0.088,0.032,0.212,0.14,0.542,0.14,0.14,1349
+     195,Chris Paul,GSW,38,0.277,0.951,0.413,0.546,0.646,0.823,0.69,1337
+     196,Draymond Green,GSW,33,0.261,0.895,0.839,0.835,0.293,0.634,0.534,1335
+     197,Isaiah Joe,OKC,24,0.204,0.092,0.076,0.253,0.413,0.73,0.626,1335
+     198,Jakob Poeltl,TOR,28,0.413,0.469,0.907,0.927,0.361,0.614,0.534,1319
+     199,Moritz Wagner,ORL,26,0.393,0.092,0.526,0.983,0.646,0.795,0.686,1315
+     200,Andre Drummond,CHI,30,0.212,0,0.915,0.393,0.799,0.485,0.409,1298
+     201,Dereck Lively II,DAL,19,0.248,0.064,0.811,1,0.542,0.578,0.493,1294
+     202,Wendell Carter Jr.,ORL,24,0.429,0.321,0.839,0.281,0.152,0.156,0.14,1274
+     203,Julian Champagnie,SAS,22,0.072,0.132,0.112,0.835,0.698,0.702,0.566,1273
+     204,Cedi Osman,SAS,28,0.108,0.297,0.1,0.682,0.116,0.212,0.212,1269
+     205,Naji Marshall,NOP,26,0.132,0.357,0.369,0.887,0.092,0.212,0.212,1240
+     206,Amir Coffey,LAC,26,0.064,0.064,0.024,0.437,0.493,0.409,0.333,1239
+     207,Kris Dunn,UTA,29,0.024,0.694,0.168,0.156,0.116,0.502,0.409,1226
+     208,Tyler Herro,MIA,24,0.827,0.734,0.662,0.204,0.413,0.646,0.493,1209
+     209,Amen Thompson,HOU,21,0.277,0.445,0.759,0.333,0.718,0.751,0.59,1203
+     210,Cameron Payne,TOT,29,0.152,0.481,0.008,0.381,0.092,0.313,0.293,1197
+     211,Dyson Daniels,NOP,20,0.048,0.506,0.369,0.084,0.646,0.634,0.493,1196
+     212,T.J. McConnell,IND,31,0.309,0.851,0.128,0.425,0.152,0.823,0.658,1188
+     213,Joel Embiid,PHI,29,1,0.879,0.971,0.907,0.646,0.995,0.951,1186
+     214,Jeff Green,HOU,37,0.072,0.004,0.076,0.14,0.028,0.156,0.14,1184
+     215,Alec Burks,TOT,32,0.393,0.132,0.076,0.594,0.244,0.196,0.212,1183
+     216,Haywood Highsmith,MIA,27,0.064,0.032,0.168,0.53,0.493,0.381,0.333,1181
+     217,Patrick Williams,CHI,22,0.333,0.212,0.413,0.449,0.293,0.305,0.269,1174
+     218,Aaron Holiday,HOU,27,0.088,0.321,0.012,0.253,0.2,0.156,0.14,1174
+     219,David Roddy,TOT,22,0.104,0.132,0.273,0.12,0.493,0.417,0.381,1173
+     220,Miles McBride,NYK,23,0.188,0.257,0,0.004,0.2,0.012,0.028,1172
+     221,John Konchar,MEM,27,0.004,0.357,0.578,0.642,0.244,0.538,0.453,1171
+     222,Marcus Sasser,DET,23,0.152,0.586,0.016,0.16,0.028,0.128,0.14,1169
+     223,Gordon Hayward,TOT,33,0.313,0.598,0.333,0.112,0.092,0.156,0.14,1165
+     224,Gary Harris,ORL,29,0.124,0.257,0.016,0.614,0.361,0.313,0.293,1145
+     225,Jordan Hawkins,NOP,21,0.168,0.064,0.072,0.108,0.152,0.08,0.104,1140
+     226,Anthony Black,ORL,20,0.016,0.176,0.052,0.24,0.413,0.088,0.12,1134
+     227,Kris Murray,POR,23,0.036,0.132,0.236,0,0.152,0.044,0.076,1126
+     228,Gradey Dick,TOR,20,0.168,0.092,0.052,0.128,0.008,0.004,0.012,1124
+     229,Malcolm Brogdon,POR,31,0.658,0.863,0.393,0.297,0.028,0.775,0.59,1121
+     230,Duop Reath,POR,27,0.277,0.032,0.333,0.855,0.361,0.578,0.453,1118
+     231,Kevon Looney,GSW,27,0.012,0.341,0.726,0.485,0.116,0.313,0.293,1118
+     232,Larry Nance Jr.,NOP,31,0.044,0.257,0.626,0.943,0.542,0.775,0.59,1114
+     233,Dean Wade,CLE,27,0.028,0.004,0.441,0.642,0.465,0.538,0.409,1108
+     234,Josh Richardson,MIA,30,0.325,0.445,0.156,0.405,0.244,0.293,0.269,1103
+     235,Aaron Wiggins,OKC,25,0.084,0.032,0.076,0.959,0.244,0.55,0.409,1098
+     236,Drew Eubanks,PHO,26,0.02,0.004,0.481,0.947,0.413,0.341,0.293,1096
+     237,Dario Šarić,GSW,29,0.176,0.421,0.554,0.658,0.244,0.662,0.493,1080
+     238,Joe Ingles,ORL,36,0.004,0.558,0.052,0.666,0.413,0.429,0.333,1063
+     239,Shaedon Sharpe,POR,20,0.67,0.534,0.626,0.056,0.064,0.088,0.12,1059
+     240,Dennis Smith Jr.,BRK,26,0.088,0.642,0.168,0.02,0.293,0.393,0.293,1059
+     241,Marvin Bagley III,TOT,24,0.457,0.064,0.751,0.855,0.064,0.429,0.333,1053
+     242,Sam Merrill,CLE,27,0.188,0.321,0.04,0.722,0.116,0.634,0.453,1051
+     243,Jae Crowder,MIL,33,0.072,0.132,0.236,0.261,0.116,0.14,0.14,1045
+     244,Ziaire Williams,MEM,22,0.188,0.212,0.305,0.024,0.2,0.016,0.044,1038
+     245,Vasilije Micić,TOT,30,0.112,0.714,0.004,0.068,0.012,0.024,0.052,1036
+     246,Jae'Sean Tate,HOU,28,0,0.032,0.212,0.333,0.116,0.128,0.14,1030
+     247,GG Jackson II,MEM,19,0.538,0.064,0.441,0.128,0.361,0.196,0.14,1029
+     248,Quentin Grimes,TOT,23,0.12,0.132,0.04,0.036,0.152,0.196,0.14,1025
+     249,Moses Moody,GSW,21,0.188,0.004,0.2,0.51,0.2,0.55,0.409,1021
+     250,Trey Lyles,SAC,28,0.14,0.092,0.526,0.71,0.116,0.293,0.269,1013`;
+     
+     
+     function calculateEuclideanDifference(data1, data2) {
+       let difference = 0;
+       for (let i = 4; i <= 10; i++) {
+         const metric1 = parseFloat(data1[i]);
+         const metric2 = parseFloat(data2[i]);
+         difference += Math.pow(metric1 - metric2, 2);
+       }
+       return Math.sqrt(difference);
+     }
+     
+     const dataArray = csvData.split('\n').map(line => line.split(','));
+     
+     const colorClasses = ['result-color-blue', 'result-color-pink', 'result-color-orange', 'result-color-green', 'result-color-bleu', 'result-color-rose', 'result-color-1', 'result-color-2', 'result-color-3', 'result-color-4', 'result-color-5', 'result-color-6', 'result-color-7', 'result-color-8', 'result-color-9', 'result-color-10', 'result-color-11', 'result-color-12', 'result-color-13', 'result-color-14', 'result-color-15', 'result-color-16', 'result-color-17', 'result-color-18', 'result-color-19', 'result-color-20', 'result-color-21', 'result-color-22', 'result-color-23', 'result-color-24', 'result-color-25', 'result-color-26', 'result-color-27', 'result-color-28', 'result-color-29', 'result-color-30', 'result-color-31', 'result-color-32', 'result-color-33', 'result-color-34', 'result-color-35', 'result-color-36', 'result-color-37', 'result-color-38', 'result-color-39', 'result-color-40', 'result-color-41', 'result-color-42', 'result-color-43', 'result-color-44', 'result-color-45', 'result-color-46', 'result-color-47', 'result-color-48'];
+     
+     let searchResults = []; // Declare the search results variable
+     
+     
+     function removeSpecialChars(str) {
+       return str.normalize('NFD').replace(/[\u0300-\u036f\s]/g, '');
+     }
+     
+     function search(query) {
+       const results = dataArray.filter(data =>
+         removeSpecialChars(data[1].toLowerCase()).includes(removeSpecialChars(query.toLowerCase()))
+       );
+       return results;
+     }
+     
+     function createTable(teamName, teamIndex, color) {
+       const resultsTable = document.getElementById('resultsTable');
+     
+       const headerNames = [
+         '',
+         'Percentiles',
+         '',
+         'Age',
+         'Points',
+         'Assists',
+         'Rebounds',
+         'True shooting',
+         'Defensive WS',
+         'Box +/-',
+         'VORP',
+         'Minutes played', 
+       '' // Add an empty string for the "x" column
+     ];
+     
+     
+       // Check if table headers exist
+       const headersExist = resultsTable.querySelector('th') !== null;
+     
+       const table = headersExist ? resultsTable.querySelector('table') : document.createElement('table');
+       table.classList.add('metrics-table');
+     
+       if (!headersExist) {
+         // Create the table header
+         const headerRow = document.createElement('tr');
+        
+     for (let i = 1; i < headerNames.length; i++) {
+       const th = document.createElement('th');
+       th.textContent = headerNames[i];
+       headerRow.appendChild(th);
+     }
+     // Add a separate table header for the "x" column
+     const xHeader = document.createElement('th');
+     xHeader.textContent = '';
+     headerRow.appendChild(xHeader);
+         table.appendChild(headerRow);
+       }
+     
+     
+     
+     const teamData = dataArray[teamIndex];
+     const dataRow = document.createElement('tr');
+     for (let i = 1; i < teamData.length; i++) {
+       const td = document.createElement('td');
+       if (i >= 4 && i <= 10) {
+         const value = parseFloat(teamData[i]) * 100;
+         td.textContent = value.toFixed(1);
+       } else {
+         td.textContent = teamData[i];
+       }
+       td.classList.add(color);
+       dataRow.appendChild(td);
+     }
+     
+     // Add a separate table cell for the "x" column
+     const xCell = document.createElement('td');
+     const xButton = document.createElement('button');
+     xButton.textContent = 'x';
+     xButton.addEventListener('click', function () {
+       dataRow.remove(); // Remove the corresponding row from the table
+       const radarPolygons = document.querySelectorAll(`.radarPolygon.${color}`);
+       const radarLines = document.querySelectorAll(`.radarLines.${color}`);
+       const radarCircles = document.querySelectorAll(`.radarCircle.${color}`);
+     
+       radarPolygons.forEach((polygon) => polygon.remove()); // Remove radar polygons with the specified color
+       radarLines.forEach((line) => line.remove()); // Remove radar lines with the specified color
+       radarCircles.forEach((circle) => circle.remove()); // Remove radar circles with the specified color
+     });
+     
+     xCell.appendChild(xButton);
+     dataRow.appendChild(xCell);
+     
+     table.appendChild(dataRow);
+     
+       if (!headersExist) {
+         resultsTable.appendChild(table);
+       }
+     
+     
+       const combResults = dataArray[teamIndex].join(', ');
+       console.log(combResults);
+     
+       const outerRadius = 190;
+       const center = [0, 0];
+       const angles = [
+         0,
+         (2 * Math.PI) / 7,
+         (4 * Math.PI) / 7,
+         (6 * Math.PI) / 7,
+         (8 * Math.PI) / 7,
+         (10 * Math.PI) / 7,
+         (12 * Math.PI) / 7
+       ];
+     
+       function axisValueToCartesian(axis, value) {
+         let angle = angles[axis - 1];
+         angle += (2 * Math.PI / 7) * 0.2;
+         const x = 190 * value * Math.cos(angle);
+         const y = 190 * value * Math.sin(angle);
+         return { x, y };
+       }
+     
+       const svg = document.querySelector('.radar');
+       const radarWrapper = svg.appendChild(
+         document.createElementNS('http://www.w3.org/2000/svg', 'g')
+       );
+       radarWrapper.setAttribute('transform', 'translate(231.77,225.77)');
+       radarWrapper.innerHTML = '';
+     
+       const data = [];
+       const rowCols = combResults.split(',');
+       for (let i = 4; i < 11; i++) {
+         data.push({ axis: i - 3, value: parseFloat(rowCols[i]) });
+       }
+     
+       const points = data
+         .map(({ axis, value }) => {
+           const { x, y } = axisValueToCartesian(axis, value);
+           return `${x},${y}`;
+         })
+         .join(' ');
+     
+       const polyline = document.createElementNS(
+         'http://www.w3.org/2000/svg',
+         'polyline'
+       );
+       polyline.setAttribute('class', `radarLines ${color}`);
+       polyline.setAttribute('points', `${points} ${points.split(' ')[0]}`);
+       polyline.setAttribute('stroke-width', '3');
+       polyline.setAttribute('fill', 'none');
+       radarWrapper.appendChild(polyline);
+     
+       const polygon = document.createElementNS(
+         'http://www.w3.org/2000/svg',
+         'polygon'
+       );
+       polygon.setAttribute('class', `radarPolygon ${color}`);
+       polygon.setAttribute('points', points);
+       polygon.style.fillOpacity = '0.2';
+       radarWrapper.appendChild(polygon);
+     
+       data.forEach(({ axis, value }) => {
+         const { x, y } = axisValueToCartesian(axis, value);
+         const circle = document.createElementNS(
+           'http://www.w3.org/2000/svg',
+           'circle'
+         );
+         circle.setAttribute('class', `radarCircle ${color}`);
+         circle.style.fillOpacity = '0.86';
+         circle.setAttribute('r', '6');
+         circle.setAttribute('cx', x);
+         circle.setAttribute('cy', y);
+         radarWrapper.appendChild(circle);
+       });
+     }
+     
+     
+     
+     function toggleFilling() {
+       const radarPolygons = document.querySelectorAll('.radarPolygon');
+       radarPolygons.forEach(polygon => {
+         polygon.style.fill = polygon.style.fill ? '' : 'none'; // Toggle the filling
+       });
+     }
+     
+     
+       const teamNames = new Set();
+     
+     
+     function createTableForTeam1() {
+       const searchInput = document.getElementById('searchInput1');
+       const searchButton = document.getElementById('searchButton1');
+       const resultsTable = document.getElementById('resultsTable');
+       const teamNamesList = document.createElement('ul');
+       teamNamesList.style.fontFamily = 'Arial, sans-serif';
+       teamNamesList.style.listStyleType = 'none';
+       teamNamesList.style.paddingLeft = '9px';
+       resultsTable.appendChild(teamNamesList);
+       let searchCounter = 0;
+     
+       searchButton.addEventListener('click', function () {
+         const searchQuery = searchInput.value;
+         const results = search(searchQuery);
+     
+         // Reset the toggle state before performing a new search
+         const radarPolygons = document.querySelectorAll('.radarPolygon');
+         radarPolygons.forEach(polygon => {
+           polygon.style.fill = '';
+         });
+     
+         if (results) {
+           const teamId = parseInt(results[0]);
+           const teamName =
+             results[1] + ' (' + results[2] + ', ' + results[3] + ') - ' + results[11] + ' min';
+           const color = colorClasses[searchCounter % colorClasses.length];
+     
+           createTable(teamName, teamId - 1, color);
+     
+           searchCounter++;
+         }
+       });
+     }
+     
+     createTableForTeam1();
+     
+     
+     
+     const similarPlayersContainer = document.createElement("div");
+     similarPlayersContainer.id = "similarPlayersContainer";
+     similarPlayersContainer.style.position = "absolute";
+     similarPlayersContainer.style.top = "733px";
+     similarPlayersContainer.style.left = "210px";
+     document.body.appendChild(similarPlayersContainer);
+     
+     let colorIndex = 0; // Initialize color index
+     
+     
+     searchButton1.addEventListener("click", function() {
+      const searchQuery = searchInput.value;
+     const searchedPlayer = search(searchQuery);
+     
+     if (searchedPlayer.length > 0) {
+       const searchedPlayerData = searchedPlayer[0];
+       const searchedPlayerIndex = parseInt(searchedPlayerData[0]) - 1;
+     
+       // Calculate Euclidean difference with all matching players and find the most similar players
+       const similarPlayers = [];
+       for (let i = 0; i < dataArray.length; i++) {
+         if (i !== searchedPlayerIndex) {
+           const difference = calculateEuclideanDifference(searchedPlayerData, dataArray[i]);
+           similarPlayers.push({ index: i, difference: difference });
+         }
+       }
+     
+       similarPlayers.sort((a, b) => a.difference - b.difference);
+     
+       // Get the three most similar players
+       const mostSimilarPlayers = similarPlayers.slice(0, 5);
+     
+       for (let i = 0; i < 1; i++) {
+         const playerIndex = mostSimilarPlayers[i].index;
+         const playerName = dataArray[playerIndex][1];
+         const playerAge = dataArray[playerIndex][3];
+         const playerTeam = dataArray[playerIndex][2];
+     
+     const similarPlayerTable = document.createElement("table");
+     similarPlayerTable.classList.add("metrics-table");
+     
+     const headerRow = document.createElement("tr");
+     const headerCell = document.createElement("th");
+     headerCell.setAttribute("colspan", "5");
+     headerCell.textContent = `Similar data to ${searchedPlayer[0][1]}`;
+       headerCell.classList.add(colorClasses[colorIndex % colorClasses.length]);
+     headerRow.appendChild(headerCell);
+     similarPlayerTable.appendChild(headerRow);
+     
+     const similarPlayerRow = document.createElement("tr");
+     
+     for (let i = 0; i < mostSimilarPlayers.length; i++) {
+       const playerIndex = mostSimilarPlayers[i].index;
+       const playerName = dataArray[playerIndex][1];
+       const playerAge = dataArray[playerIndex][3];
+       const playerTeam = dataArray[playerIndex][2];
+     
+       const playerCell = document.createElement("td");
+       playerCell.textContent = `${playerName}`;
+     playerCell.style.fontSize = "10.8px"; // Set the desired font size
+       playerCell.style.cursor = "pointer"; // Set cursor to pointer
+     
+       // Add click event listener to the player name cell
+       playerCell.addEventListener("click", function() {
+         searchInput.value = playerName; // Set search input value to the clicked player name
+         // Trigger the search button click event to perform the search
+         searchButton1.click();
+       });
+     
+       similarPlayerRow.appendChild(playerCell);
+     }
+     
+     if (similarPlayersContainer.children.length > 0) {
+       // Remove the previous table if it exists
+       similarPlayersContainer.removeChild(similarPlayersContainer.firstChild);
+     }
+     
+     similarPlayerTable.appendChild(similarPlayerRow);
+     similarPlayersContainer.appendChild(similarPlayerTable);
+     
+     colorIndex++; // Increment color index for the next search
+     
+     
+     
+       }
+     
+     }
+     
+     
+       searchInput.value = '';
+       updateMatchingNames();
+     
+     });
+     
+
+    </script>
+ <script>
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+      const body = document.querySelector("body");
+      body.classList.toggle("dark-mode");
+
+      // Store the user's preference in local storage
+      const isDarkMode = body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDarkMode);
+    }
+
+    // Check if user has a stored preference for dark mode
+    const storedDarkMode = localStorage.getItem("darkMode");
+
+    if (storedDarkMode === "true") {
+      const body = document.querySelector("body");
+      body.classList.add("dark-mode");
+    }
+
+  </script>
+
+
+
+</div>
+
+	<br>
+	<br>
+	<br>
+	
+</body>
+</html>
